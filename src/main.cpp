@@ -3,41 +3,40 @@
 class Piece {
    public:
     const int value;
-    int row, col;
-    Piece(int c_value, int c_row, int c_col)
-        : value(c_value), row(c_row), col(c_col) {}
+    Piece(int c_value)
+        : value(c_value){}
 };
 
-Piece[18] pieces;
+Piece[8][4] board;
 
-void startGame() {
-    // P2 pieces
+startGame() {
+    // P1 starting places
     // Queens
-    pieces[0] = Piece(3, 8, 1);
-    pieces[1] = Piece(3, 8, 2);
-    pieces[2] = Piece(3, 7, 1);
+    board[0][2] = Piec(3);
+    board[0][3] = Piece(3);
+    board[1][3] = Piece(3);
     // Drones
-    pieces[3] = Piece(2, 8, 3);
-    pieces[4] = Piece(2, 7, 2);
-    pieces[5] = Piece(2, 6, 1);
+    board[0][1] = Piece(2);
+    board[1][2] = Piece(2);
+    board[2][3] = Piece(2);
     // Pawns
-    pieces[6] = Piece(1, 7, 3);
-    pieces[7] = Piece(1, 6, 3);
-    pieces[8] = Piece(1, 6, 2);
+    board[1][1] = Piece(1);
+    board[2][1] = Piece(1);
+    board[2][2] = Piece(1);
 
-    // P1 pieces
+    // P2 starting places
     // Queens
-    pieces[9] = Piece(3, 1, 4);
-    pieces[10] = Piece(3, 1, 3);
-    pieces[11] = Piece(3, 2, 4);
+    board[6][0] = Piec(3);
+    board[7][0] = Piece(3);
+    board[7][1] = Piece(3);
     // Drones
-    pieces[12] = Piece(2, 3, 4);
-    pieces[13] = Piece(2, 2, 3);
-    pieces[14] = Piece(2, 1, 2);
+    board[5][0] = Piece(2);
+    board[6][1] = Piece(2);
+    board[7][2] = Piece(2);
     // Pawns
-    pieces[15] = Piece(1, 3, 3);
-    pieces[16] = Piece(1, 3, 2);
-    pieces[17] = Piece(1, 2, 2);
+    board[5][1] = Piece(1);
+    board[5][2] = Piece(1);
+    board[6][2] = Piece(1);
 }
 
 void drawBoard() {
